@@ -151,4 +151,14 @@ def generate() -> Dict[str, List[Dict[str, str]]]:
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # When running on a platform like Render or other PaaS providers,
+    # the application needs to listen on the host 0.0.0.0 and the port
+    # specified in the PORT environment variable.  Falling back to
+    # 5000 ensures the app still works locally if PORT is not set.
+    host = "0.0.0.0"
+    port = int(os.environ.get("PORT", 5000))
+    # Disable Flask's debug mode in production to avoid exposing
+    # sensitive information.  Locally, you can enable debug by
+    # exporting FLASK_DEBUG=1 before running the app.
+    debug_mode = os.environ.get("FLASK_DEBUG", "0") == "1"
+    app.run(host=host, port=port, debug=debug_mode)
