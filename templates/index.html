@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI‑Gift Concierge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Use a friendly, modern sans-serif font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="title">AI‑Gift Concierge</h1>
+      <p class="subtitle">Finde das perfekte Geschenk in Sekunden</p>
+    </header>
+    <form id="giftForm" class="glass-card">
+      <div class="form-group">
+        <label for="occasion">Anlass</label>
+        <input type="text" id="occasion" name="occasion" placeholder="Geburtstag, Jubiläum …" required>
+      </div>
+      <div class="form-group">
+        <label for="budget">Budget</label>
+        <input type="text" id="budget" name="budget" placeholder="z.B. 50 €" required>
+      </div>
+      <div class="form-group">
+        <label for="interests">Interessen</label>
+        <input type="text" id="interests" name="interests" placeholder="Hobby, Lieblingsfarbe …" required>
+      </div>
+      <button type="submit" class="submit-btn">Geschenke finden</button>
+    </form>
+    <div id="results" class="results"></div>
+  </div>
+  <script src="/static/main.js"></script>
+</body>
+</html>
